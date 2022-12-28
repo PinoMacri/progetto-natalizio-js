@@ -28,29 +28,34 @@
 
 <body>
     <!--^---------------- HEADER ------------------>
+    <!--* Header -->
     <header>
-        <!--* Nav -->
-        <nav class="containers justify-content-between h-100">
-            <div class="row h-100 p-0 m-0">
-                <div class="col-4  h-100 " id="logoPrincipale">
-                    <a class="p-2" href="#"><img src="img/Logo.webp" alt="logo"></a>
+        <!--* Nav / Containers -->
+        <nav class="containers h-100 justify-content-between">
+            <!--* Row -->
+            <div class="row h-100 p-0 m-0 align-items-center">
+                <!-- Col Logo -->
+                <div class="col-4  " id="logoPrincipale">
+                    <a class="" href="#"><img src="img/Logo.webp" alt="logo"></a>
                 </div>
-               
-                <ul id="officialMenu" class="col-12 h-100 d-flex justify-content-end align-items-center classicStyle d-none">
-                    <li class="m-3"><a class="text-decoration-none text-white" href="#">Home Page</a></li>
-                    <li class="m-3"><a class="text-decoration-none text-white" href="#">Crea i tuoi Mondi</a></li>
-                    <li class="m-3"><a class="text-decoration-none text-white" href="#">Jenken e il Monte Fato</a></li>
-                    <li class="m-3"><a class="text-decoration-none text-white" href="#">Contatti</a></li>
-                </ul>
-
-                <ul class="col-8 h-100 d-flex justify-content-end align-items-center">
+                <!-- Col Burger/Close Menù -->
+                <ul class="col-8 m-0 h-100 d-flex justify-content-end align-items-center d-lg-none">
                     <li class="classicStyle text-white"><i id="burgerMenu" class="fa-solid fa-bars"></i></li>
-                    <li id="closeMenu" class="classicStyle text-white d-none"><i class="fa-regular fa-circle-xmark"></i></li>
-                
+                    <li id="closeMenu" class="classicStyle text-white d-none"><i class="fa-regular fa-circle-xmark"></i>
+                    </li>
+                </ul>
+                <!-- Col List Menù -->
+                <ul id="officialMenu"
+                    class="col-12 col-lg-8 m-lg-0 flex-lg-row h-100 d-flex justify-content-end justify-content-lg-between align-items-center classicStyle d-none d-lg-flex">
+                    <li class="my-3"><a class="text-decoration-none text-white" href="#">Home Page</a></li>
+                    <li class="my-3"><a class="text-decoration-none text-white" href="#">Crea i tuoi Mondi</a></li>
+                    <li class="my-3"><a class="text-decoration-none text-white" href="#">Jenken e il Monte Fato</a></li>
+                    <li class="my-3"><a class="text-decoration-none text-white" href="#">Contatti</a></li>
                 </ul>
             </div>
         </nav>
     </header>
+    <!--~------------------------------------------>
 </body>
 
 </html>

@@ -4,21 +4,19 @@ body {
     font-size: 20px;
 }
 div,nav,header,ul {
-    border: 1px dashed black;
+    border: 1p dashed black;
 }
 ul {
     list-style-type: none;
+    
 }
 /*!--------------------- UTILITIES ---------------------*/
 .classicStyle {
     text-shadow: 1px 1px 30px rgb(0, 0, 0), 0 0 1em blue, 0 0 0.2em red ;
 }
-.marginTop {
-    margin-top: 160px;
-}
 /*^----------------------- HEADER ---------------------*/
 header {
-    height: 100px;
+    padding: 10px;
     margin: 5px 0px;
     box-shadow:  1px 1px 20px violet, 0 0 1em blue ;
     background: linear-gradient(-90deg, green , #ee7752, #e73c7e, goldenrod, black);
@@ -37,12 +35,13 @@ header {
             background-position: 0% 50%;
         }
     }
- /**----- Nav -----*/
-div a img {
+ /**-- Nav / Containers--*/
+ div a img {
     height: 90px;
     width: 130px;
-}
+ }
  #burgerMenu , #closeMenu{
     font-size: 40px;
     cursor: pointer;
 }
+/*~---------------------------------------------------*/
