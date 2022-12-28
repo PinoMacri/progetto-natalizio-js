@@ -3,45 +3,82 @@ body {
     font-family: 'Amita', cursive;
     font-size: 20px;
 }
-div,nav,header,ul {
+
+div,
+nav,
+header,
+ul {
     border: 1p dashed black;
 }
+
 ul {
     list-style-type: none;
-    
 }
+
 /*!--------------------- UTILITIES ---------------------*/
 .classicStyle {
-    text-shadow: 1px 1px 30px rgb(0, 0, 0), 0 0 1em blue, 0 0 0.2em red ;
+    text-shadow: 1px 1px 30px rgb(0, 0, 0), 0 0 1em blue, 0 0 0.2em red;
 }
+
 /*^----------------------- HEADER ---------------------*/
 header {
     padding: 10px;
-    margin: 5px 0px;
-    box-shadow:  1px 1px 20px violet, 0 0 1em blue ;
-    background: linear-gradient(-90deg, green , #ee7752, #e73c7e, goldenrod, black);
+    margin-top: 5px;
+    box-shadow: 1px 1px 20px violet, 0 0 1em blue;
+    background: linear-gradient(-90deg, green, #ee7752, #e73c7e, goldenrod, black);
     background-size: 400% 400%;
     background-repeat: no-repeat;
     animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
     }
-    @keyframes gradient {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
+    50% {
+        background-position: 100% 50%;
     }
- /**-- Nav / Containers--*/
- div a img {
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/**-- Nav / Containers--*/
+div a img {
     height: 90px;
     width: 130px;
- }
- #burgerMenu , #closeMenu{
+}
+#logoPrincipale{
+    padding: 20px;
+}
+#burgerMenu,
+#closeMenu {
     font-size: 40px;
     cursor: pointer;
+    padding: 0px 20px;
+}
+ul li a {
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+#officialMenu li a:hover {
+    background: linear-gradient(-90deg, rgb(206, 15, 164), #001aff, #000000, goldenrod, rgb(255, 0, 0));
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    animation: gradients 15s ease infinite;
+    border-radius: 20px;
+    padding: 0px 20px;
+}
+@keyframes gradients {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 /*~---------------------------------------------------*/
