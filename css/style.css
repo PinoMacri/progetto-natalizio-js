@@ -8,7 +8,11 @@ ul {
 }
 /*!--------------------- UTILITIES ---------------------*/
 .classicStyle {
-    text-shadow: 1px 1px 30px rgb(0, 0, 0), 0 0 1em blue, 0 0 0.2em red;
+    text-shadow: 1px 1px 30px rgb(255, 0, 0), 0 0 1em rgb(255, 0, 85), 0 0 0.2em rgb(255, 208, 0);
+}
+.classicStyle-2 {
+    color: whitesmoke;
+    text-shadow: 1px 1px 30px rgb(255, 0, 0), 0 0 1em rgb(255, 0, 85), 0 0 0.2em rgb(255, 208, 0);
 }
 .boxSdw {
     box-shadow: 1px 1px 20px rgb(255, 0, 0), 0 0 1em blue;
@@ -76,7 +80,7 @@ ul li a {
 }
 /*~----------------------------------------------------*/
 /*^------------------------ MAIN ----------------------*/
-/**-- Jumbotron--*/
+/**-- Slide Jumbotron--*/
 #carouselExampleAutoplaying {
     height: 400px;
 }
@@ -90,7 +94,6 @@ ul li a {
     height: 100%;
     width: 100%;
     object-fit: cover;
-
 }
 @media screen and (min-width: 900px) {
     #gallery {
@@ -98,8 +101,93 @@ ul li a {
         object-position: -400px -135px ;
     }
 }
-
-
+/**-- Story Section--*/
+#storySection {
+   background-image: url("../img/384498.png");
+   background-size: 130%;
+}
+@media screen and (min-width: 1200px){
+    #storySection {
+        height: 500px;
+        background-size: 100%;
+    }
+    #storySection p {
+        line-height: 50px;
+    }
+}
+/**-- List PG Section--*/
+#listPg {
+background-image: url("../img/wallpaperbetter.jpg");
+    background-size: 200%;
+    background-position: center;
+}
+/**-- Crea PG Section--*/
+#pgSection {
+    background-image: url("../img/digital-art-warrior-knight-horse-shield-Sun-1512243-wallhere.com.jpg");
+    background-size: 270%;
+    background-position: center ;
+    background-repeat: no-repeat;
+} 
+@media screen and (min-width:768px) {
+    #pgSection {
+        background-size: 200%;
+    }
+}
+@media screen and (min-width:1200px) {
+    #pgSection {
+        background-size: 120%;
+    }
+}
+#pgSection h2 {
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em red; ;
+    color: goldenrod;
+}
+#pgSection h3,button {
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em red; ;
+    color: white;
+}
+.dimensionPg {
+    width: 400px;
+    height: 400px;
+}
+.radiusCard {
+    border-radius: 40px;
+    border: 1px solid black;
+    width: 400px;
+    height: 600px;
+    background: linear-gradient(-90deg, rgb(206, 15, 164), #001aff, #000000, goldenrod, rgb(255, 0, 0));
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    animation: animazionegradiente 15s ease infinite;
+}
+#btn {
+    background-color: goldenrod;
+    border-radius: 30px;
+}
+#btn:hover {
+    transform: scale(1.2);
+    box-shadow: 1px 1px 20px rgb(255, 0, 0), 0 0 1em blue; ;
+}
+@keyframes animazionegradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.perImg {
+    object-fit: cover;
+}
+#risultato {
+    background-image: url("../img/wallpaperbetter.jpg");
+    background-size: 200%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 
 
