@@ -98,7 +98,6 @@ ul li a {
     object-fit: cover;
    
 }
-
 @media screen and (min-width: 900px) {
     #gallery {
         height: 500px;
