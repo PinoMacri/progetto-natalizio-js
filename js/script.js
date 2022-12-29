@@ -1,5 +1,5 @@
 //^ --------------------- HEADER ---------------------*/
-//**----- Prendo Elementi Header -----*/
+//**----- Nav, Prendo Elementi -----*/
 const burgerMenu = document.getElementById("burgerMenu")
 const officialMenu = document.getElementById("officialMenu")
 const closeMenu = document.getElementById("closeMenu")
@@ -17,3 +17,11 @@ closeMenu.addEventListener("click", function () {
     officialMenu.classList.add("d-none");
 })
 //~-----------------------------------------------------*/
+//^ ----------------------- MAIN -----------------------*/
+
+
+
+
+
+
+
