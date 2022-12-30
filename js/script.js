@@ -41,6 +41,7 @@ carousel.innerHTML =
 //**----- Crea PG Section -----*/
 const personaggi = ["Mago", "Guerriero", "Arcere"]
 const personaggio = []
+console.log(personaggio)
 const buttonPg = document.getElementById("buttonPg")
 let risultato = document.getElementById("risultato")
 //----- Click al Button -----*/
@@ -89,14 +90,25 @@ buttonPg.addEventListener("click", function () {
         personaggio.push(pianeta.value)
         pianeta.value = ""
     }
+    risultato.classList.remove("d-none")
     risultato.innerHTML = `
-    <div class="radiusCard boxSdw text-center d-flex flex-column align-items-center">
-    <div class="classicStyle-2">Razza: ${personaggio[1]} </div>
-    <div class="pt-4 classicStyle-2">Nome dell'Eroe: ${personaggio[0]} </div>
-    <div class="p-1 classicStyle-2">Nato nel lontano ${personaggio[2]} </div>
-    <div class="p-1 classicStyle-2">Nel magico mondo di ${personaggio[3]} </div>
-    </div> `
+<div class="radiusCard boxSdw text-center d-flex flex-column align-items-center">
+<div class="classicStyle-2">Razza: ${personaggio[1]} </div>
+<div class="pt-4 classicStyle-2">Nome dell'Eroe: ${personaggio[0]} </div>
+<div class="p-1 classicStyle-2">Nato nel lontano ${personaggio[2]} </div>
+<div class="p-1 classicStyle-2">Nel magico mondo di ${personaggio[3]} </div>
+</div> `
+
+    const personalCard = document.getElementById("personalCard")
+    personalCard.innerHTML = `
+<div class="radiusCard my-5 mx-xl-5  boxSdw text-center d-flex flex-column align-items-center">
+<div class="classicStyle-2">Razza: ${personaggio[1]} </div>
+<div class="pt-4 classicStyle-2">Nome dell'Eroe: ${personaggio[0]} </div>
+<div class="p-1 classicStyle-2">Nato nel lontano ${personaggio[2]} </div>
+<div class="p-1 classicStyle-2">Nel magico mondo di ${personaggio[3]} </div>
+</div> `
 })
+
 //**----- Campo Minato Lv1 Section -----*/
 const unicoNumeroRandom = (min = 1, max = 100, blackList) => {
     let randomNumber;
@@ -122,9 +134,10 @@ for (let i = 1; i <= 40; i++) {
         let hasBomb
         if (hasBomb = extractedNumber.includes(i)) {
             singleDiv.classList.add("bg-danger")
-            campoM.innerHTML += `<div class="mt-5"><p class="text-white text-center">La partita è finita! il tuo punteggio è stato di ${(counter) - 1} punti! Purtroppo non eri tu il prescelto per sconfiggere lo Jenken :( se vuoi, riaggiorna la pagina e ricomincia</p></div>`
+            campoM.innerHTML += `<div class="mt-5"><p class="classicStyle text-white text-center" >La partita è finita! il tuo punteggio è stato di ${(counter) - 1} punti! Purtroppo non eri tu il prescelto per sconfiggere lo Jenken :( se vuoi, riaggiorna la pagina e ricomincia</p></div>`
         } else if ((counter === 5) && (!(hasBomb = extractedNumber.includes(i)))) {
-            campoM.innerHTML += `<div class="mt-5"><p class=" text-center text-white">Complimenti, Hai vinto! Sei riuscito ad evitare la trappola dello Jenken per 5 volte, clicca il bottone per andare al secondo ed ultimo livello!</p></div>`
+            campoM.innerHTML += `<div class="mt-5"><p class="text-center classicStyle text-white" >Complimenti, Hai vinto! Sei riuscito ad evitare la trappola dello Jenken per 5 volte, clicca il bottone per andare al secondo ed ultimo livello!</p></div>`
+            btn3.classList.remove("d-none")
         }
         /* In questo caso il gioco si blocca in automatico perchè sono andato
         ad aggiungere testo nello stesso div dove ci sta il campo minato,
@@ -136,18 +149,49 @@ for (let i = 1; i <= 40; i++) {
 }
 const extractedNumber = [];
 for (let i = 1; i <= 2; i++) {
-    
     const cellNumber = unicoNumeroRandom(1, 40, extractedNumber)
-    
     extractedNumber.push(cellNumber)
 }
 console.log(extractedNumber)
 const btn2 = document.getElementById("btn2")
-btn2.addEventListener("click" , function () {
+const btn3 = document.getElementById("btn3")
+btn2.addEventListener("click", function () {
     campoM.classList.remove("d-none")
 })
+btn3.addEventListener ("click" , function(){
+    lastGame.classList.remove("d-none")
+})
+//**----- Dadi Lv2 Section -----*/
+const punteggioPersonale = document.getElementById("punteggioPersonale")
+const punteggioJenken = document.getElementById("punteggioJenken")
+const risultatoFinale = document.getElementById("risultatoFinale")
+const playDadi = document.getElementById("playDadi")
+const mins = 1
+const maxs = 10
+const personalNumber = Math.floor(Math.random() * (maxs + 1 - mins)) + mins;
+const jenkenNumber = Math.floor(Math.random() * (maxs + 1 - mins)) + mins;
+const lastId = document.getElementById("lastId")
+const lastButtons = document.createElement("button")
+lastId.appendChild(lastButtons)
+lastButtons.classList.add("ricompensa" , "py-4" , "px-5" , "h1" , "text-white" , "mt-5" , "bckGoldRad" , "d-none")
+lastButtons.append("Riscuoti la tua Ricompensa!")
 
-
-
+playDadi.addEventListener("click", function () {
+    const personalNumber = Math.floor(Math.random() * (maxs + 1 - mins)) + mins;
+    const jenkenNumber = Math.floor(Math.random() * (maxs + 1 - mins)) + mins;
+    punteggioPersonale.innerHTML = personalNumber
+    punteggioJenken.innerHTML = jenkenNumber
+    if (personalNumber > jenkenNumber) {
+        risultatoFinale.innerText = "HAI SCONFITTO JENKEN IL GRANDE! Ora potrai riscuotere la tua ricompensa!"
+        playDadi.disabled = true
+       
+        lastButtons.classList.remove ("d-none")
+    } else if (personalNumber < jenkenNumber) {
+        risultatoFinale.innerText = "Ti ha battuto, ma non demordere, riprova!"
+    }
+    else if (personalNumber === jenkenNumber) {
+        risultatoFinale.innerText = "Per un soffio, sei a un passo dalla vittoria!"
+    }
+})
 
 
