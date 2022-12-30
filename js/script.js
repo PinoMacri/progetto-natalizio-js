@@ -65,7 +65,7 @@ buttonPg.addEventListener("click", function () {
     if (razzaValue === "Mago") {
         personaggio.push(`<div>${razzaValue}</div> <div class="dimensionPg "><img class="perImg img-fluid"  src="img/mago.png" alt="1"></div>`)
         razza.value = ""
-    } else if (razzaValue === "Arcere") {
+    } else if (razzaValue === "Arciere") {
         personaggio.push(`<div>${razzaValue}</div> <div class="dimensionPg w-100"><img class="w-100 h-100" src="img/arcere.png" alt="1"></div>`)
         razza.value = ""
     }
@@ -73,7 +73,7 @@ buttonPg.addEventListener("click", function () {
         personaggio.push(`<div>${razzaValue}</div> <div class="dimensionPg w-100"><img class="w-100 h-100" src="img/guerriero.png" alt="1"></div>`)
         razza.value = ""
     } else {
-        alert("Devi scegliere tra Mago, Guerriero o Arcere")
+        alert("Devi scegliere tra Mago, Guerriero o Arciere")
         razza.value = ""
     }
     //----- Nascita -----*/
@@ -128,7 +128,6 @@ for (let i = 1; i <= 40; i++) {
     singleDiv.append(i)
     singleDiv.addEventListener("click", function () {
         singleDiv.classList.add("bg-primary")
-
         singleDiv.disabled = true;
         ++counter
         let hasBomb
@@ -161,7 +160,7 @@ btn2.addEventListener("click", function () {
 btn3.addEventListener("click", function () {
     lastGame.classList.remove("d-none")
 })
-//**----- Dadi Lv2 Section & Ricompensa -----*/
+//**----- Dadi Lv2 Section -----*/
 const punteggioPersonale = document.getElementById("punteggioPersonale")
 const punteggioJenken = document.getElementById("punteggioJenken")
 const risultatoFinale = document.getElementById("risultatoFinale")
@@ -174,9 +173,8 @@ const lastId = document.getElementById("lastId")
 const lastButtons = document.createElement("button")
 lastId.appendChild(lastButtons)
 lastButtons.classList.add("ricompensa", "py-4", "px-5", "h1", "text-white", "mt-5", "bckGoldRad", "d-none")
-lastButtons.append("Riscuoti la tua Ricompensa!")
+lastButtons.append("Ottieni la tua Corona")
 const playDadiDue = document.getElementById("playDadiDue")
-const ricompensa = document.getElementById("ricompensa")
 playDadi.addEventListener("click", function () {
     const personalNumber = Math.floor(Math.random() * (maxs + 1 - mins)) + mins;
     const jenkenNumber = Math.floor(Math.random() * (maxs + 1 - mins)) + mins;
@@ -189,7 +187,6 @@ playDadi.addEventListener("click", function () {
         playDadiDue.disabled = true
         playDadiDue.classList.remove("d-none")
         lastButtons.classList.remove("d-none")
-        ricompensa.classList.remove("d-none")
     } else if (personalNumber < jenkenNumber) {
         risultatoFinale.innerText = "Ti ha battuto, ma non demordere, riprova!"
     }
@@ -197,5 +194,9 @@ playDadi.addEventListener("click", function () {
         risultatoFinale.innerText = "Per un soffio, sei a un passo dalla vittoria!"
     }
 })
-
-
+//~-----------------------------------------------------*/
+//^ ----------------------- FOOTER -----------------------*/
+const ricompensa = document.getElementById("ricompensa")
+lastButtons.addEventListener("click" , function(){
+    ricompensa.classList.remove("d-none")
+})
