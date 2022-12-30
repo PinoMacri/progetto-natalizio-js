@@ -43,9 +43,10 @@ const personaggi = ["Mago", "Guerriero", "Arcere"]
 const personaggio = []
 const buttonPg = document.getElementById("buttonPg")
 let risultato = document.getElementById("risultato")
-
 //----- Click al Button -----*/
 buttonPg.addEventListener("click", function () {
+    const campoMinato = document.getElementById("campoMinato")
+    campoMinato.classList.remove("d-none")
     //----- Nome PG -----*/
     const namePg = document.getElementById("nome")
     let namePgValue = namePg.value
@@ -96,7 +97,49 @@ buttonPg.addEventListener("click", function () {
     <div class="p-1 classicStyle-2">Nel magico mondo di ${personaggio[3]} </div>
     </div> `
 })
+//**----- Campo Minato Lv1 Section -----*/
+const unicoNumeroRandom = (min = 1, max = 100, blackList) => {
+    let randomNumber;
+    do {
+        randomNumber = Math.floor(Math.random() * (max + 1 - min)) + min;
+    } while (blackList.includes(randomNumber))
+    return randomNumber;
+}
+let campoM = document.getElementById("campoM")
+let randomNumbers = []
+const popup = document.getElementById("popup")
+const risultatos = document.getElementById("risultatos")
+let counter = [0]
+for (let i = 1; i <= 40; i++) {
+    let singleDiv = document.createElement("button")
+    campoM.appendChild(singleDiv)
+    singleDiv.append(i)
+    singleDiv.addEventListener("click", function () {
+        singleDiv.classList.add("bg-primary")
 
+        singleDiv.disabled = true;
+        ++counter
+        let hasBomb
+        if (hasBomb = extractedNumber.includes(i)) {
+            singleDiv.classList.add("bg-danger")
+            campoM.innerHTML += `<div class="mt-5"><p class="text-white text-center">La partita è finita! il tuo punteggio è stato di ${(counter) - 1} punti! Purtroppo non eri tu il prescelto per sconfiggere lo Jenken :( se vuoi, riaggiorna la pagina e ricomincia</p></div>`
+        } else if ((counter === 5) && (!(hasBomb = extractedNumber.includes(i)))) {
+            campoM.innerHTML += `<div class="mt-5"><p class=" text-center text-white">Complimenti, Hai vinto! Sei riuscito ad evitare la trappola dello Jenken per 5 volte, clicca il bottone per andare al secondo ed ultimo livello!</p></div>`
+        }
+    })
+}
+const extractedNumber = [];
+for (let i = 1; i <= 2; i++) {
+    
+    const cellNumber = unicoNumeroRandom(1, 40, extractedNumber)
+    
+    extractedNumber.push(cellNumber)
+}
+console.log(extractedNumber)
+const btn2 = document.getElementById("btn2")
+btn2.addEventListener("click" , function () {
+    campoM.classList.remove("d-none")
+})
 
 
 
