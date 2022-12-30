@@ -267,6 +267,10 @@ font-size: 50px;
     background-color: goldenrod;
     border-radius: 30px;
 }
+#playDadiDue {
+    background-color: goldenrod;
+    border-radius: 30px;
+}
 #playDadi:hover {
     transform: scale(1.2);
     box-shadow: 1px 1px 20px rgb(255, 0, 0), 0 0 1em blue; ;
@@ -283,4 +287,26 @@ button.ricompensa:hover {
 .bckGoldRad {
     background-color: goldenrod;
     border-radius: 30px;
+}
+/**-- Ricompensa --*/
+#ricompensa img {
+width: 200px;
+height: 200px;
+}
+#ricompensa {
+    background: linear-gradient(-90deg, rgb(206, 15, 164), #001aff, #000000, goldenrod, rgb(255, 0, 0));
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    animation: animazionegradiente2 15s ease infinite;
+}
+@keyframes animazionegradiente2 {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }

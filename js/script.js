@@ -158,10 +158,10 @@ const btn3 = document.getElementById("btn3")
 btn2.addEventListener("click", function () {
     campoM.classList.remove("d-none")
 })
-btn3.addEventListener ("click" , function(){
+btn3.addEventListener("click", function () {
     lastGame.classList.remove("d-none")
 })
-//**----- Dadi Lv2 Section -----*/
+//**----- Dadi Lv2 Section & Ricompensa -----*/
 const punteggioPersonale = document.getElementById("punteggioPersonale")
 const punteggioJenken = document.getElementById("punteggioJenken")
 const risultatoFinale = document.getElementById("risultatoFinale")
@@ -173,19 +173,23 @@ const jenkenNumber = Math.floor(Math.random() * (maxs + 1 - mins)) + mins;
 const lastId = document.getElementById("lastId")
 const lastButtons = document.createElement("button")
 lastId.appendChild(lastButtons)
-lastButtons.classList.add("ricompensa" , "py-4" , "px-5" , "h1" , "text-white" , "mt-5" , "bckGoldRad" , "d-none")
+lastButtons.classList.add("ricompensa", "py-4", "px-5", "h1", "text-white", "mt-5", "bckGoldRad", "d-none")
 lastButtons.append("Riscuoti la tua Ricompensa!")
-
+const playDadiDue = document.getElementById("playDadiDue")
+const ricompensa = document.getElementById("ricompensa")
 playDadi.addEventListener("click", function () {
     const personalNumber = Math.floor(Math.random() * (maxs + 1 - mins)) + mins;
     const jenkenNumber = Math.floor(Math.random() * (maxs + 1 - mins)) + mins;
     punteggioPersonale.innerHTML = personalNumber
     punteggioJenken.innerHTML = jenkenNumber
     if (personalNumber > jenkenNumber) {
-        risultatoFinale.innerText = "HAI SCONFITTO JENKEN IL GRANDE! Ora potrai riscuotere la tua ricompensa!"
+        risultatoFinale.innerText = "HAI SCONFITTO JENKEN IL GRANDE! Ora sei tu il nuovo Re di Radaxian! Prendi la tua Corona, scaricala e sarà per sempre tua!"
         playDadi.disabled = true
-       
-        lastButtons.classList.remove ("d-none")
+        playDadi.classList.add("d-none")
+        playDadiDue.disabled = true
+        playDadiDue.classList.remove("d-none")
+        lastButtons.classList.remove("d-none")
+        ricompensa.classList.remove("d-none")
     } else if (personalNumber < jenkenNumber) {
         risultatoFinale.innerText = "Ti ha battuto, ma non demordere, riprova!"
     }
