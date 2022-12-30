@@ -126,6 +126,12 @@ for (let i = 1; i <= 40; i++) {
         } else if ((counter === 5) && (!(hasBomb = extractedNumber.includes(i)))) {
             campoM.innerHTML += `<div class="mt-5"><p class=" text-center text-white">Complimenti, Hai vinto! Sei riuscito ad evitare la trappola dello Jenken per 5 volte, clicca il bottone per andare al secondo ed ultimo livello!</p></div>`
         }
+        /* In questo caso il gioco si blocca in automatico perchè sono andato
+        ad aggiungere testo nello stesso div dove ci sta il campo minato,
+        se avessi fatto comparire il testo su un altro div avrei potuto
+        continuare a giocare, questo perche inserendo += lui prende ciò
+        che è effettivamente in quel momento il campo minato con le sue
+        relative selezioni */
     })
 }
 const extractedNumber = [];
