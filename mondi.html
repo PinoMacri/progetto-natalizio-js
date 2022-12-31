@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mondi.css">
+    <link rel="icon" href="img/Logo.webp">
+</head>
+
+<body>
+    <button class="m-5"><a href="index.html">Torna al Sito</a></button>
+    <div class="text-center p-4">
+        <div class="p-3">
+            <h2 class="h1">Inserisci il numero delle Contee da Creare da 1 a 30</h2>
+            <input id="contea" type="number" min="1">
+        </div>
+        <div class="p-3">
+            <h2 class="h1">Inserisci il numero Minimo random da generare al loro interno</h2>
+            <input id="min" type="number" min="1">
+        </div>
+        <div class="p-3">
+            <h2 class="h1">Inserisci il numero Massimo random da generare al loro interno</h2>
+            <input id="max" type="number" min="1">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div><button id="genera" class="m-2">Genera</button></div>
+        <div><button id="reset" class="m-2">Reset</button></div>
+    </div>
+
+    <div id="risultato" class="d-flex flex-wrap justify-content-center"></div>
+
+    <script src="js/mondi.js"></script>
+</body>
+
+</html>

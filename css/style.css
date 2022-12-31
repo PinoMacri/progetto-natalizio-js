@@ -33,6 +33,9 @@ header {
     background-size: 400% 400%;
     background-repeat: no-repeat;
     animation: gradient 15s ease infinite;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 @keyframes gradient {
     0% {

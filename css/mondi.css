@@ -1,0 +1,38 @@
+body {
+    font-family: 'Amita', cursive;
+    font-size: 20px;
+    background: linear-gradient(-90deg, green, #ee7752, #e73c7e);
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.personalization {
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    background-color: red;
+}
+a{
+    text-decoration: none;
+    color: goldenrod;
+}
+button {
+    background-color: black;
+    color: goldenrod;
+}
+button:hover {
+    transform: scale(1.5);
+}
