@@ -46,15 +46,13 @@ const buttonPg = document.getElementById("buttonPg")
 let risultato = document.getElementById("risultato")
 //----- Click al Button -----*/
 let campoMinato = document.getElementById("campoMinato")
-buttonPg.addEventListener("click", function () {
-    campoMinato.classList.remove("d-none")
+const btn = document.getElementById("btn")
+btn.addEventListener("click", function () {
     //----- Nome PG -----*/
     const namePg = document.getElementById("nome")
     let namePgValue = namePg.value
-    if (!isNaN(namePgValue)) {
-        alert("Compila il campo con un nome, non sono accettati numeri")
+    if (!(isNaN(namePgValue))) {
         namePg.value = ""
-        return false;
     } else {
         personaggio.push(namePgValue)
         namePg.value = ""
@@ -73,24 +71,22 @@ buttonPg.addEventListener("click", function () {
         personaggio.push(`<div>${razzaValue}</div> <div class="dimensionPg w-100"><img class="w-100 h-100" src="img/guerriero.png" alt="1"></div>`)
         razza.value = ""
     } else {
-        alert("Devi scegliere tra Mago, Guerriero o Arciere")
         razza.value = ""
     }
-    //----- Nascita -----*/
+    //----- Nascita&Pianeta -----*/
     let nascita = document.getElementById("nascita")
+    let pianeta = document.getElementById("pianeta")
     let nascitaValue = nascita.value
     personaggio.push(nascitaValue)
-    //----- Pianeta -----*/
-    let pianeta = document.getElementById("pianeta")
-    if (!isNaN(pianeta.value)) {
-        alert("Compila il campo con un nome, non sono accettati numeri")
-        pianeta.value = ""
-        return false;
+    personaggio.push(pianeta.value)
+    if ((isNaN(namePgValue)) && (pianeta.value != "") && ((razzaValue === "Mago") || (razzaValue === "Arciere") || (razzaValue === "Guerriero")) ) {
+        risultato.classList.remove("d-none")
+        campoMinato.classList.remove("d-none")
+        btn.disabled=true
     } else {
-        personaggio.push(pianeta.value)
-        pianeta.value = ""
+        alert("Ricordati che è obbligatorio specificare la provenienza e che non sono accettati numeri, inoltre devi obbligatoriamente scegliere tra Mago Guerriero o Arciere!")
+        window.location.reload()
     }
-    risultato.classList.remove("d-none")
     risultato.innerHTML = `
 <div class="radiusCard boxSdw text-center d-flex flex-column align-items-center">
 <div class="classicStyle-2">Razza: ${personaggio[1]} </div>
@@ -98,7 +94,6 @@ buttonPg.addEventListener("click", function () {
 <div class="p-1 classicStyle-2">Nato nel lontano ${personaggio[2]} </div>
 <div class="p-1 classicStyle-2">Nel magico mondo di ${personaggio[3]} </div>
 </div> `
-
     const personalCard = document.getElementById("personalCard")
     personalCard.innerHTML = `
 <div class="radiusCard my-5 mx-xl-5  boxSdw text-center d-flex flex-column align-items-center">
@@ -108,7 +103,6 @@ buttonPg.addEventListener("click", function () {
 <div class="p-1 classicStyle-2">Nel magico mondo di ${personaggio[3]} </div>
 </div> `
 })
-
 //**----- Campo Minato Lv1 Section -----*/
 const unicoNumeroRandom = (min = 1, max = 100, blackList) => {
     let randomNumber;
