@@ -45,8 +45,8 @@ console.log(personaggio)
 const buttonPg = document.getElementById("buttonPg")
 let risultato = document.getElementById("risultato")
 //----- Click al Button -----*/
+let campoMinato = document.getElementById("campoMinato")
 buttonPg.addEventListener("click", function () {
-    const campoMinato = document.getElementById("campoMinato")
     campoMinato.classList.remove("d-none")
     //----- Nome PG -----*/
     const namePg = document.getElementById("nome")
@@ -122,41 +122,51 @@ let randomNumbers = []
 const popup = document.getElementById("popup")
 const risultatos = document.getElementById("risultatos")
 let counter = [0]
-for (let i = 1; i <= 40; i++) {
-    let singleDiv = document.createElement("button")
-    campoM.appendChild(singleDiv)
-    singleDiv.append(i)
-    singleDiv.addEventListener("click", function () {
-        singleDiv.classList.add("bg-primary")
-        singleDiv.disabled = true;
-        ++counter
-        let hasBomb
-        if (hasBomb = extractedNumber.includes(i)) {
-            singleDiv.classList.add("bg-danger")
-            campoM.innerHTML += `<div class="mt-5"><p class="classicStyle text-white text-center" >La partita è finita! il tuo punteggio è stato di ${(counter) - 1} punti! Purtroppo non eri tu il prescelto per sconfiggere lo Jenken :( se vuoi, riaggiorna la pagina e ricomincia</p></div>`
-        } else if ((counter === 5) && (!(hasBomb = extractedNumber.includes(i)))) {
-            campoM.innerHTML += `<div class="mt-5"><p class="text-center classicStyle text-white" >Complimenti, Hai vinto! Sei riuscito ad evitare la trappola dello Jenken per 5 volte, clicca il bottone per andare al secondo ed ultimo livello!</p></div>`
-            btn3.classList.remove("d-none")
-        }
-        /* In questo caso il gioco si blocca in automatico perchè sono andato
-        ad aggiungere testo nello stesso div dove ci sta il campo minato,
-        se avessi fatto comparire il testo su un altro div avrei potuto
-        continuare a giocare, questo perche inserendo += lui prende ciò
-        che è effettivamente in quel momento il campo minato con le sue
-        relative selezioni */
-    })
-}
-const extractedNumber = [];
-for (let i = 1; i <= 2; i++) {
-    const cellNumber = unicoNumeroRandom(1, 40, extractedNumber)
-    extractedNumber.push(cellNumber)
-}
-console.log(extractedNumber)
 const btn2 = document.getElementById("btn2")
-const btn3 = document.getElementById("btn3")
 btn2.addEventListener("click", function () {
+    btn2.disabled=true;
+    const extractedNumber = [];
+    for (let i = 1; i <= 2; i++) {
+        const cellNumber = unicoNumeroRandom(1, 40, extractedNumber)
+        extractedNumber.push(cellNumber)
+        console.log(extractedNumber)
+    }
     campoM.classList.remove("d-none")
+    for (let i = 1; i <= 40; i++) {
+        let singleDiv = document.createElement("button")
+        campoM.appendChild(singleDiv)
+        singleDiv.append(i)
+        singleDiv.addEventListener("click", function () {
+            singleDiv.classList.add("bg-primary")
+            singleDiv.disabled = true;
+            ++counter
+            let hasBomb
+            if (hasBomb = extractedNumber.includes(i)) {
+                singleDiv.classList.add("bg-danger")
+                campoM.innerHTML += `<div class="mt-5"><p class="classicStyle text-white text-center" >La partita è finita! il tuo punteggio è stato di ${(counter) - 1} punti! Purtroppo non eri tu il prescelto per sconfiggere lo Jenken :( se vuoi, riaggiorna la pagina e ricomincia</p>
+                <button id="regame">Rigioca!</button>
+                </div>`
+                const regame = document.getElementById("regame")
+                regame.addEventListener("click", function () {
+                    campoM.innerText = ""
+                    campoM.classList.add("d-none")
+                    btn2.disabled=false;
+                    counter=[0]
+                })
+            } else if ((counter === 5) && (!(hasBomb = extractedNumber.includes(i)))) {
+                campoM.innerHTML += `<div class="mt-5"><p class="text-center classicStyle text-white" >Complimenti, Hai vinto! Sei riuscito ad evitare la trappola dello Jenken per 5 volte, clicca il bottone per andare al secondo ed ultimo livello!</p></div>`
+                btn3.classList.remove("d-none")
+            }
+            /* In questo caso il gioco si blocca in automatico perchè sono andato
+            ad aggiungere testo nello stesso div dove ci sta il campo minato,
+            se avessi fatto comparire il testo su un altro div avrei potuto
+            continuare a giocare, questo perche inserendo += lui prende ciò
+            che è effettivamente in quel momento il campo minato con le sue
+            relative selezioni */
+        })
+    }
 })
+const btn3 = document.getElementById("btn3")
 btn3.addEventListener("click", function () {
     lastGame.classList.remove("d-none")
 })
@@ -197,6 +207,6 @@ playDadi.addEventListener("click", function () {
 //~-----------------------------------------------------*/
 //^ ----------------------- FOOTER -----------------------*/
 const ricompensa = document.getElementById("ricompensa")
-lastButtons.addEventListener("click" , function(){
+lastButtons.addEventListener("click", function () {
     ricompensa.classList.remove("d-none")
 })
