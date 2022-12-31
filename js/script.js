@@ -137,7 +137,7 @@ btn2.addEventListener("click", function () {
             let hasBomb
             if (hasBomb = extractedNumber.includes(i)) {
                 singleDiv.classList.add("bg-danger")
-                campoM.innerHTML += `<div class="mt-5"><p class="classicStyle text-white text-center" >La partita è finita! il tuo punteggio è stato di ${(counter) - 1} punti! Purtroppo non eri tu il prescelto per sconfiggere lo Jenken :( se vuoi, riaggiorna la pagina e ricomincia</p>
+                campoM.innerHTML += `<div class="mt-5 text-center"><p class="classicStyle text-white text-center" >La partita è finita! il tuo punteggio è stato di ${(counter) - 1} punti! Clicca su rigioca per riprovare ad attraversare i giardini dello Jenken!</p>
                 <button id="regame">Rigioca!</button>
                 </div>`
                 const regame = document.getElementById("regame")
