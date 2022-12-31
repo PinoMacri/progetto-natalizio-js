@@ -89,6 +89,33 @@ ul li a {
 /*~----------------------------------------------------*/
 /*^------------------------ MAIN ----------------------*/
 /**-- Slide Jumbotron--*/
+#padreTitoli {
+    position: relative;
+}
+#titolos {
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    z-index: 2;
+}
+#titolo {
+    position: relative;
+    color: black;
+}
+#titolo::before {
+    content:attr(data-text);
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 23em;
+    color: white;
+    text-shadow: 1px 1px 30px rgb(255, 0, 85), 0 0 0.2em rgb(255, 208, 0);
+    animation: movimento 14s infinite;
+    animation-direction:alternate;
+}
+@keyframes movimento {
+    0% {max-width:0;}
+}
 #carouselExampleAutoplaying {
     height: 400px;
 }
