@@ -1,0 +1,131 @@
+body {
+    font-family: 'Amita', cursive;
+    font-size: 20px;
+    background-color: gray;
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+.padre {
+    text-align: center;
+    width: 600px;
+    height: 600px;
+    position: relative
+}
+.nonno {
+    margin-top: 50px;
+}
+#sito a{
+    position: absolute;
+    left: 50px;
+    background-color: black;
+    color: goldenrod;
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+#sito a:hover {
+    transform: scale(1.5);
+}
+/*! Setto la classe delle immagini del carosello con la transizione del box-shadow e dell'opacity 
+/*! Per far avere l'effetto dissolvenza anche all'immagine in uscita */
+.carosello {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+
+    transition-property: opacity , box-shadow;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    /**Più sarù alta la transision-duration più l'effetto dissolvenza sarà evidente*/
+    transition-duration: 1.0s;
+    opacity: 0;
+    box-shadow: 0;
+}
+/*! Setto la classe active delle immagini del carosello, al posto di display block 
+/*! (Tecnica usata se avessi fatto il carosello normale senza dissolvenza) ho inserito opacity 1,
+/*! in modo tale che l'immagine in entrata andra in dissolvenza */
+.active {
+    box-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em red;
+    opacity: 1;
+    backface-visibility: hidden;
+    transition-property: opacity , box-shadow;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    /**Più sarù alta la transision-duration più l'effetto dissolvenza sarà evidente*/
+    transition-duration: 1.0s;
+}
+/*!---------------CON QUESTA DOPPIA TRANSIZIONE AVRO 2 EFFETTI DISSOLVENZA, LO AVRA SIA L'IMMAGINE CHE ABBANDONERA' LA SCENA SIA A QUELLA CHE SUBENTRERA*/
+.figlio {
+    width: 100%;
+}
+
+.figlio div {
+    margin-top: 20px;
+    width: 300px;
+    height: 200px;
+}
+/*! Setto la classe delle thumbnails con la transizione del box-shadow e dell'opacity 
+/*! Per far avere l'effetto dissolvenza anche al thumbnails in uscita */
+.thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 40px;
+    opacity: 0.5;
+    box-shadow: 0;
+  
+    transition-property: opacity , box-shadow;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    /**Più sarù alta la transision-duration più l'effetto dissolvenza sarà evidente*/
+    transition-duration: 1.0s;
+}
+.thumb:hover {
+    box-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em red;
+    opacity: 1;
+}
+/*! Setto la classe active delle thumbnails, al posto di display block 
+/*! (Tecnica usata se avessi fatto il carosello/thumbnails normale senza dissolvenza) ho inserito opacity 1,
+/*! in modo tale che il thumbnails in entrata andra in dissolvenza */
+.actives {
+    opacity: 1;
+    box-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em red;
+    backface-visibility: hidden;
+    transition-property: opacity, box-shadow;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    /**Più sarù alta la transision-duration più l'effetto dissolvenza sarà evidente*/
+    transition-duration: 1.0s;
+}
+
+/*! Opzionale sistemo i bottoni per li slider */
+#left {
+    font-size: 50px;
+    position: absolute;
+    left: 500px;
+    top: 38%;
+    transform: translatey(-50%);
+    cursor: pointer;
+}
+#left:hover {
+    color: blue;
+}
+#right {
+    font-size: 50px;
+    position: absolute;
+    right: 500px;
+    top: 38%;
+    transform: translatey(-50%);
+    cursor: pointer;
+}
+#right:hover {
+    color: blue;
+}
