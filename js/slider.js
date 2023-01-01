@@ -52,6 +52,8 @@ function myFunction() {
     images[currentActive].classList.add("active")
     thumbs[currentActive].classList.add("actives")
 }
+
+
 //------------------------------------------------------------------------------------------------------------------
 //! 7) 
 //* Quando clicco il thumbnail, lo lascio selezionato deselezionando l'altro e lo faccio apparire nel carosello
@@ -74,7 +76,7 @@ const right = document.getElementById("right")
 e lascio selezionato il thumbnails successivo,
 Creo il controllo nel caso in cui siamo arrivati dopo l'ultima immagine
 riniziamo dalla prima */
-right.addEventListener("click" , function(){
+right.addEventListener("click", function () {
     images[currentActive].classList.remove("active")
     thumbs[currentActive].classList.remove("actives")
     currentActive++
@@ -88,16 +90,53 @@ right.addEventListener("click" , function(){
 e lascio selezionato il thumbnails precedente,
 Creo il controllo nel caso in cui siamo arrivati prima della prima immagine
 riniziamo dall'ultima */
-left.addEventListener("click" , function(){
+left.addEventListener("click", function () {
     images[currentActive].classList.remove("active")
     thumbs[currentActive].classList.remove("actives")
     currentActive--
-    if (currentActive < 0 ) {
+    if (currentActive < 0) {
         currentActive = 5
     }
     images[currentActive].classList.add("active")
     thumbs[currentActive].classList.add("actives")
 })
+
+
+const stopPlay = document.getElementById("stopPlay")
+const automatico = document.getElementById("automatico")
+const contrario = document.getElementById("contrario")
+
+let slide;
+let flag = false
+automatico.addEventListener("click", function () {
+    flag = !flag
+    console.log(flag)
+    if (flag) {
+        stopPlay.title = "PLAY"
+        stopPlay.innerHTML = `<i class="fa-regular fa-circle-play"></i>  `
+        automatico.classList.add("activet")
+        clearInterval(clock)
+        clearInterval(slide)
+    } else if (flag === false) {
+        stopPlay.title = "STOP"
+        stopPlay.innerHTML = `<i class="fa-regular fa-circle-pause"></i> `
+        automatico.classList.remove("activet")
+        slide = setInterval(myFunzione, 3000);
+        function myFunzione() {
+            images[currentActive].classList.remove("active")
+            thumbs[currentActive].classList.remove("actives")
+            currentActive++
+            if (currentActive === images.length) {
+                currentActive = 0
+            }
+            images[currentActive].classList.add("active")
+            thumbs[currentActive].classList.add("actives")
+        }
+    }
+})
+
+
+
 
 
 

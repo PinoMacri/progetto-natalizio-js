@@ -16,18 +16,6 @@ body {
 .nonno {
     margin-top: 50px;
 }
-#sito a{
-    position: absolute;
-    left: 50px;
-    background-color: black;
-    color: goldenrod;
-    border-radius: 20px;
-    text-decoration: none;
-    padding: 10px 20px;
-}
-#sito a:hover {
-    transform: scale(1.5);
-}
 /*! Setto la classe delle immagini del carosello con la transizione del box-shadow e dell'opacity 
 /*! Per far avere l'effetto dissolvenza anche all'immagine in uscita */
 .carosello {
@@ -106,26 +94,79 @@ body {
     transition-duration: 1.0s;
 }
 
-/*! Opzionale sistemo i bottoni per li slider */
+
+
+#padreBottoni {
+    box-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em red;
+    width: 50%;
+    height: 60px;
+    
+}
 #left {
     font-size: 50px;
-    position: absolute;
-    left: 500px;
-    top: 38%;
-    transform: translatey(-50%);
+ 
+
+
+
     cursor: pointer;
+    color: black;
 }
 #left:hover {
     color: blue;
 }
 #right {
     font-size: 50px;
-    position: absolute;
-    right: 500px;
-    top: 38%;
-    transform: translatey(-50%);
+
     cursor: pointer;
+    color: black;
 }
 #right:hover {
     color: blue;
+}
+
+
+
+.slider:hover {
+    transform: scale(1.1);
+}
+#automatico {
+    cursor: pointer;
+    font-size: 50px;
+    background-color: transparent;
+    border: none;
+    
+}
+#stopPlay {
+    cursor: pointer;
+}
+#automatico:hover {
+    color: blue;
+}
+
+
+.fastActivites {
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em red; ;
+}
+#playing {
+    padding-top: 50px;
+}
+
+
+#reverse {
+    cursor:pointer;
+    font-size: 50px;
+    background-color: transparent;
+    border: none; 
+    color: black;
+    
+}
+#reverse:hover {
+    color: blue;
+}
+#contrario {
+    cursor:pointer;
+    font-size: 50px;
+    background-color: transparent;
+    border: none;
+    
 }
