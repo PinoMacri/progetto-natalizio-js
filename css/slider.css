@@ -147,5 +147,22 @@ body {
 #noPlay {
     cursor: pointer;
 }
-
+#tornaSito {
+    position: absolute;
+    left: 0;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: black;
+}
+#tornaSitos {
+    text-decoration: none;
+    color: goldenrod;
+}
+#tornaSito:hover {
+    transform: scale(1.1);
+}
+#tornaSitos:hover {
+    text-decoration: underline;
+}
 
