@@ -31,7 +31,7 @@ body {
     transition-property: opacity , box-shadow;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
-    /**Più sarù alta la transision-duration più l'effetto dissolvenza sarà evidente*/
+    /**Più sarù alta la transition-duration più l'effetto dissolvenza sarà evidente*/
     transition-duration: 1.0s;
     opacity: 0;
     box-shadow: 0;
@@ -46,14 +46,13 @@ body {
     transition-property: opacity , box-shadow;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
-    /**Più sarù alta la transision-duration più l'effetto dissolvenza sarà evidente*/
+    /**Più sarù alta la transition-duration più l'effetto dissolvenza sarà evidente*/
     transition-duration: 1.0s;
 }
 /*!---------------CON QUESTA DOPPIA TRANSIZIONE AVRO 2 EFFETTI DISSOLVENZA, LO AVRA SIA L'IMMAGINE CHE ABBANDONERA' LA SCENA SIA A QUELLA CHE SUBENTRERA*/
 .figlio {
     width: 100%;
 }
-
 .figlio div {
     margin-top: 20px;
     width: 300px;
@@ -73,7 +72,7 @@ body {
     transition-property: opacity , box-shadow;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
-    /**Più sarù alta la transision-duration più l'effetto dissolvenza sarà evidente*/
+    /**Più sarù alta la transition-duration più l'effetto dissolvenza sarà evidente*/
     transition-duration: 1.0s;
 }
 .thumb:hover {
@@ -90,42 +89,31 @@ body {
     transition-property: opacity, box-shadow;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
-    /**Più sarù alta la transision-duration più l'effetto dissolvenza sarà evidente*/
+    /**Più sarù alta la transition-duration più l'effetto dissolvenza sarà evidente*/
     transition-duration: 1.0s;
 }
-
-
-
+/*! Qui faccio solo aggiustamenti dei bottoni */
 #padreBottoni {
     box-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em red;
     width: 50%;
     height: 60px;
-    
 }
 #left {
     font-size: 50px;
- 
-
-
-
     cursor: pointer;
     color: black;
 }
 #left:hover {
-    color: blue;
+    transform: scale(1.1);
 }
 #right {
     font-size: 50px;
-
     cursor: pointer;
     color: black;
 }
 #right:hover {
-    color: blue;
+    transform: scale(1.1);
 }
-
-
-
 .slider:hover {
     transform: scale(1.1);
 }
@@ -134,39 +122,30 @@ body {
     font-size: 50px;
     background-color: transparent;
     border: none;
-    
 }
 #stopPlay {
     cursor: pointer;
 }
 #automatico:hover {
-    color: blue;
+    transform: scale(1.1);
 }
-
-
 .fastActivites {
     text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em red; ;
 }
 #playing {
     padding-top: 50px;
 }
-
-
 #reverse {
     cursor:pointer;
     font-size: 50px;
     background-color: transparent;
     border: none; 
-    color: black;
-    
 }
 #reverse:hover {
-    color: blue;
+    transform: scale(1.1);
 }
-#contrario {
-    cursor:pointer;
-    font-size: 50px;
-    background-color: transparent;
-    border: none;
-    
+#noPlay {
+    cursor: pointer;
 }
+
+
