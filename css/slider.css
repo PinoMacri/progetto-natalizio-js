@@ -105,6 +105,7 @@ body {
 }
 #left:hover {
     transform: scale(1.1);
+    color: blue;
 }
 #right {
     font-size: 50px;
@@ -113,6 +114,7 @@ body {
 }
 #right:hover {
     transform: scale(1.1);
+    color: blue;
 }
 .slider:hover {
     transform: scale(1.1);
@@ -129,6 +131,7 @@ body {
     background-color: transparent;
     border: none; 
 }
+/*! Setto i comportamenti dei bottoni all'hover*/
 .revo:hover {
     transform: scale(1.1);
     color: blue;

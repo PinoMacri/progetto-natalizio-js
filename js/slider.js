@@ -108,6 +108,7 @@ automatico.addEventListener("click", function () {
     flag = !flag
     stopPlay.innerHTML = `<i class="fa-regular fa-circle-pause"></i>`
     stopPlay.title = "STOP"
+    /* Indico dopo il click le classi da aggiungere e rimuovere all'hover dei bottoni */
     noPlay.classList.remove("spento")
     noPlay.classList.add("default")
     reverse.classList.remove("revo")   
@@ -126,6 +127,7 @@ automatico.addEventListener("click", function () {
         }
     } else if (flag === false) {
         reverse.disabled = false;
+        /* Indico nel secondo click toggle le classi da aggiungere e rimuovere all'hover dei bottoni */
         noPlay.classList.add("spento")
         noPlay.classList.remove("default")
         reverse.classList.add("revo")
@@ -147,6 +149,7 @@ reverse.addEventListener("click", function () {
     noPlay.title = "STOP REVERSE START"
     flags = !flags
     noPlay.innerHTML = `<i class="fa-regular fa-circle-pause"></i>`
+    /* Indico dopo il click le classi da aggiungere e rimuovere all'hover dei bottoni */
     automatico.classList.remove("automaticos")
     stopPlay.classList.remove("automaticok")
     stopPlay.classList.add("default")
@@ -166,6 +169,7 @@ reverse.addEventListener("click", function () {
     } else if (flags === false) {
         clearInterval(reverseSlide)
         automatico.disabled = false;
+        /* Indico nel secondo click toggle le classi da aggiungere e rimuovere all'hover dei bottoni */
         automatico.classList.add("automaticos")
         stopPlay.classList.add("automaticok")
         stopPlay.classList.remove("default")
