@@ -17,41 +17,46 @@
 
 <body>
 
+  <!-- CAROSELLO -->
   <div class="nonno d-flex flex-column align-items-center">
-    <button id="tornaSito" class="m-5"><a id="tornaSitos" href="index.html">Torna al Sito</a></button>
     <!-- IMMAGINI -->
     <div id="padres" class="padre">
-
     </div>
     <!-- THUMBNAIL -->
     <div id="figlios" class="figlio d-flex flex-wrap justify-content-around ">
-
     </div>
-
   </div>
-  <!-- CAROSELLO DINAMICO, BOTTONI PLAYLIST -->
+
+  <!-- PLAYLIST CAROSELLO -->
   <div id="nonnoBottoni" class="d-flex justify-content-center mt-4">
-
     <div id="padreBottoni" class="text-center mt-2 d-flex justify-content-around align-items-center">
-
+      <!-- BOTTONE PREV -->
       <abbr title="BACK"><i id="left" class="fa-solid fa-backward-step"></i> </abbr>
-
-      <button id="automatico">
-        <abbr id="stopPlay" title="START">
+      
+      
+      
+      
+      <!-- BOTTONE PLAY -->
+      <button id="automatico" class="automaticos">
+        <abbr id="stopPlay" class="automaticok" title="START">
           <i class="fa-regular fa-circle-play"></i>
         </abbr>
       </button>
 
-      <button id="reverse">
-        <abbr id="noPlay" title="REVERSE START">
+
+
+      <!-- BOTTONE REVERSE -->
+      <button id="reverse" class="revo">
+        <abbr id="noPlay" class="spento" title="REVERSE START">
           <i class="fa-solid fa-arrow-rotate-left"></i>
         </abbr>
       </button>
 
-      <abbr title="NEXT"><i id="right" class="fa-sharp fa-solid fa-forward-step"></i></abbr>
-      
-    </div>
 
+
+      <!-- BOTTONE NEXT -->
+      <abbr title="NEXT"><i id="right" class="fa-sharp fa-solid fa-forward-step"></i></abbr>
+    </div>
   </div>
 
   <script src="js/slider.js"></script>

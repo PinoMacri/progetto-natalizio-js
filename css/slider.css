@@ -14,7 +14,7 @@ body {
     position: relative
 }
 .nonno {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 /*! Setto la classe delle immagini del carosello con la transizione del box-shadow e dell'opacity 
 /*! Per far avere l'effetto dissolvenza anche all'immagine in uscita */
@@ -117,18 +117,7 @@ body {
 .slider:hover {
     transform: scale(1.1);
 }
-#automatico {
-    cursor: pointer;
-    font-size: 50px;
-    background-color: transparent;
-    border: none;
-}
-#stopPlay {
-    cursor: pointer;
-}
-#automatico:hover {
-    transform: scale(1.1);
-}
+
 .fastActivites {
     text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em red; ;
 }
@@ -136,17 +125,33 @@ body {
     padding-top: 50px;
 }
 #reverse {
-    cursor:pointer;
     font-size: 50px;
     background-color: transparent;
     border: none; 
 }
-#reverse:hover {
+.revo:hover {
     transform: scale(1.1);
+    color: blue;
 }
-#noPlay {
+.spento:hover {
+    cursor: pointer ;
+}
+.default:hover {
+    cursor: default !important;
+}
+#automatico {
+    font-size: 50px;
+    background-color: transparent;
+    border: none;
+}
+.automaticos:hover {
+    transform: scale(1.1);
+    color: blue;
+}
+.automaticok:hover {
     cursor: pointer;
 }
+
 #tornaSito {
     position: absolute;
     left: 0;

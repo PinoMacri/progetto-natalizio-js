@@ -107,7 +107,10 @@ let flag = false
 automatico.addEventListener("click", function () {
     flag = !flag
     stopPlay.innerHTML = `<i class="fa-regular fa-circle-pause"></i>`
-    stopPlay.title ="STOP"
+    stopPlay.title = "STOP"
+    noPlay.classList.remove("spento")
+    noPlay.classList.add("default")
+    reverse.classList.remove("revo")   
     if (flag) {
         reverse.disabled = true;
         slide = setInterval(myFunction, 3000);
@@ -123,9 +126,12 @@ automatico.addEventListener("click", function () {
         }
     } else if (flag === false) {
         reverse.disabled = false;
+        noPlay.classList.add("spento")
+        noPlay.classList.remove("default")
+        reverse.classList.add("revo")
         clearInterval(slide)
         stopPlay.innerHTML = `<i class="fa-regular fa-circle-play"></i>`
-        stopPlay.title ="START"
+        stopPlay.title = "START"
     }
 })
 //------------------------------------------------------------------------------------------------------------------
@@ -137,18 +143,21 @@ let reverseSlide;
 let flags = false;
 /* Le slide di img e thumb torneranno indietro ogni 3 secondi */
 let hover = document.querySelectorAll("#reverse:hover")
-reverse.addEventListener("click", function (){
+reverse.addEventListener("click", function () {
     noPlay.title = "STOP REVERSE START"
     flags = !flags
     noPlay.innerHTML = `<i class="fa-regular fa-circle-pause"></i>`
-    if (flags){
+    automatico.classList.remove("automaticos")
+    stopPlay.classList.remove("automaticok")
+    stopPlay.classList.add("default")
+    if (flags) {
         automatico.disabled = true;
         reverseSlide = setInterval(myFunctions, 3000);
-        function myFunctions(){
+        function myFunctions() {
             images[currentActive].classList.remove("active")
             thumbs[currentActive].classList.remove("actives")
             currentActive--
-            if (currentActive  < 0) {
+            if (currentActive < 0) {
                 currentActive = 5
             }
             images[currentActive].classList.add("active")
@@ -156,9 +165,12 @@ reverse.addEventListener("click", function (){
         }
     } else if (flags === false) {
         clearInterval(reverseSlide)
-        automatico.disabled=false;
+        automatico.disabled = false;
+        automatico.classList.add("automaticos")
+        stopPlay.classList.add("automaticok")
+        stopPlay.classList.remove("default")
         noPlay.innerHTML = `<i class="fa-solid fa-arrow-rotate-left"></i>`
-        noPlay.title="REVERSE START"
+        noPlay.title = "REVERSE START"
     }
     console.log(flags)
 })
