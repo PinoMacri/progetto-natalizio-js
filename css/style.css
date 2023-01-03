@@ -116,6 +116,17 @@ ul li a {
 @keyframes movimento {
     0% {max-width:0;}
 }
+@media screen and (max-width: 840px){
+    #titolo {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 600px){
+    #titolo {
+        font-size: 18px;
+        left: -80px;
+    }
+}
 #carouselExampleAutoplaying {
     height: 400px;
 }
